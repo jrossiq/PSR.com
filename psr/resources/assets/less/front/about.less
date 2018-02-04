@@ -1,0 +1,102 @@
+.about{
+
+  .intro{
+    //padding-left: 50px;
+    span{
+      font-size: 25px;
+    }
+    p{
+      font-size: 20px;
+    }
+  }
+}
+
+div.integrante{
+padding-top: 50px;
+&:first-child{
+  padding-top: 20px;
+}
+  .img{
+    border-bottom: solid 1px black;
+    text-align: center;
+    img{
+      width: 100%;
+      max-width: 284px;
+      margin-top: 20px;
+    }
+  }
+  span{
+    font-size: 20px;
+    color:#6f6f6f;
+    text-align: center;
+    display: block;
+    border-bottom: solid 1px rgba(0,0,0,0.4);
+    padding: 5px;
+  }
+  .texto{
+    .img{
+      text-align: center;
+    }
+    h2{
+      font-weight: 800;
+      text-align: center;
+    }
+    p{
+
+      padding-top: 20px;
+      font-size: 18px;
+      font-weight: 300;
+    }
+  }
+
+}
+div.end{
+  border-bottom: solid 1px rgba(0,0,0,0.2);
+  min-height: 10px;
+}
+
+.q(@sm,{
+  .about{
+    padding-top: 30px;
+    padding-bottom: 100px;
+
+    .intro{
+      //padding-left: 20px;
+    }
+  }
+
+  .texto{
+    //padding-left: 50px;
+    p{
+      padding-right: 20px;
+    }
+    h2{
+      text-align: left!important;
+    }
+  }
+
+});
+
+.q(@xl,{
+  .integrante{
+    padding-right: 100px;
+  }
+
+  .about{
+    padding-top: 30px;
+    padding-bottom: 100px;
+
+    .intro{
+      padding-left: 100px;
+    }
+  }
+
+  .texto{
+    padding-left: 100px;
+    p{
+      padding-right: 50px;
+    }
+  }
+
+
+});

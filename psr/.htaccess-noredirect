@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^proyectosegundarepublica.com.ar [NC,OR]
+RewriteCond %{HTTP_HOST} ^www.proyectosegundarepublica.com.ar [NC]
+RewriteRule ^(.*)$ http://proyectosegundarepublica.com/$1 [L,R=301,NC]

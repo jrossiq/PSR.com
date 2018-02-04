@@ -1,0 +1,20 @@
+.nombre-coordinador {
+  color: #000099;
+  font-size: 1.2em;
+}
+
+.coordinadores {
+  padding: 10px;
+  background-color: #c5d7ed;
+  margin-top: 25px;
+}
+
+.social-coordinadores {
+  margin-right: 15px;
+}
+
+.body-coordinadores {
+  background-color: #ecf2f9;
+  border: 1px solid #d8e5f3;
+  border-radius: 0px 0px 10px 10px;
+}

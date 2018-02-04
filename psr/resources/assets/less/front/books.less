@@ -1,0 +1,56 @@
+div.books{
+  padding-top: 10px;
+  .libro{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    .q(@sm,{
+      .imagen{padding-top: 30px;}
+      padding-bottom: 0px;
+      padding-top: 30px;
+      });
+    .imagen{
+      text-align: center;
+      padding: 0px 20px 20px 20px;
+      img{box-shadow: 0 8px 8px rgba(0,0,0,0.25), 0 2px 2px rgba(0,0,0,0.22);
+      width: 100%;
+      max-width: 250px;}
+
+    }
+    .autor{
+      color:#808080;
+      font-style: italic;
+      font-size: 18px;
+    }
+    p{
+      font-weight: 300;
+      font-size: 16px;
+      .q(@md,{padding-right: 100px;});
+    }
+    h3{
+      margin-top: 0px!important;
+    }
+
+  }
+
+}
+
+a.buy{
+  font-size: 16px;
+  font-weight: 400;
+  .rounded(10px);
+  background-color: #fff059;
+  color:black!important;
+  padding: 10px 20px 13px 13px;
+  em{vertical-align: middle;padding-right: 10px;}
+}
+
+div.content.book{
+  .main-image{
+    max-width: 250px;
+    float: left;
+    margin-right: 30px;
+  }
+  .text{
+    margin-bottom: 50px;
+  }
+}

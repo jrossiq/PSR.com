@@ -1,0 +1,85 @@
+.article-create {
+  margin-left: 35px;
+}
+.article-edit {
+  margin-right: 15px;
+}
+
+.principal {
+  display: none;
+}
+
+.label-warning {
+  margin-left: 15px;
+}
+
+.userView {
+  margin-left: 10px;
+}
+
+.img-user-layout {
+  width: 30px;
+  margin-right: 10px!important;
+  border-radius: 50%;
+}
+
+.coordinadores {
+  background-color: #E0F2F7;
+  padding-top: 15px;
+  border-radius: 5px;
+  right: 8px;
+}
+
+.box-zones {
+  display: none;
+}
+
+.telephone {
+  display: none;
+}
+
+.contacted {
+  background-color: #E0F8E0;
+}
+
+.polls-table {
+  margin-top: 35px!important;
+}
+
+.actions {
+  margin-top: 10px;
+  display: block;
+}
+
+.list-group-item:hover {
+  background-color: #EFF8FB;
+}
+
+.view {
+  background-color: #E0F8F7;
+}
+
+.view-responsed {
+  background-color: #CEF6D8;
+}
+
+.table-contents {
+  border-top: 2px solid gray;
+}
+
+.line-hight {
+  border-bottom: 2px solid gray;
+}
+
+.editor, .creator {
+  margin-left: 15px;
+}
+
+.fecha-contacto {
+  width: 100px;
+}
+
+.mensaje {
+    font-size: 1.2em;
+    margin-left: 90px;
+}

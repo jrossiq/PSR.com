@@ -1,0 +1,83 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| This file is where you may define all of the routes that are handled
+| by your application. Just tell Laravel the URIs it should respond
+| to using a Closure or controller method. Build something great!
+|
+*/
+use App\Article;
+
+Auth::routes();
+
+Route::get('/paso',function(){
+    //PDF file is stored under project/public/download/info.pdf
+    $file= public_path(). "/descargas/Boleta-PSR-PASO-2017.pdf";
+
+    $headers = array(
+              'Content-Type: application/pdf',
+            );
+
+    return Response::download($file, 'Boleta-PSR-PASO-2017.pdf', $headers);
+});
+//
+// /* BACKEND CONTROLLERS */
+Route::get('backend', 'BackendController@index');
+Route::resource('backend/sections', 'SectionsController');
+Route::resource('backend/contents', 'ContentsController');
+Route::resource('backend/contacts', 'ContactsController');
+Route::resource('backend/accessions', 'AccessionsController');
+Route::resource('backend/polls', 'PollsController');
+Route::resource('backend/users', 'UsersController');
+
+Route::post('backend/contacts/addUser/{contact}', 'ContactsController@addUser');
+Route::get('backend/contacts/userContact/{contact}', 'ContactsController@userContact');
+Route::get('backend/contents/createBySection/{section}', 'ContentsController@createBySection');
+Route::get('backend/contents/createBySection/{section}/{subSection}', 'ContentsController@createBySubSection');
+Route::get('backend/contents/createBySection/{section}/{subSection}/{tagId}', 'ContentsController@createByTag');
+Route::get('backend/contents/getBySection/{subSection}', 'ContentsController@getContentBySubSection');
+Route::get('backend/tags/create/{tag}', 'ContentsController@addNewTag');
+Route::post('backend/contents/editImage/{content}', 'ContentsController@editImage');
+Route::post('backend/response/{contact}', 'ContactsController@response');
+Route::get('/polls/selectCountry/{country}', 'PollsController@selectCountry');
+Route::get('/polls/selectProvince/{province}', 'PollsController@selectProvince');
+Route::post('/backend/observations/{poll}', 'PollsController@newObservation');
+Route::post('/backend/resetearClave', 'UsersController@resetearClave');
+Route::post('/backend/bajaUsuario', 'UsersController@bajaUsuario');
+
+
+
+/* FRONT CONTROLLERS */
+
+Route::get('/produccion', 'FrontController@getURLTest');
+Route::get('/encuesta-psr', 'FrontController@encuestaPsr');
+Route::post('/encuesta-psr', 'PollsController@storeFromFront');
+Route::get('/adhesiones', 'FrontController@adhesiones');
+Route::post('/adhesiones', 'FrontController@storeAdhesiones');
+Route::post('/contacto', 'FrontController@contacto');
+
+Route::get('/', 'FrontController@getIndex');
+Route::get('/plataformapsr', 'FrontController@getIndexPlataforma');
+Route::get('/moreHomeVideos', 'FrontController@getMoreHomeVideos');
+Route::get('/search/{query}', 'FrontController@getContentsBySearch');
+Route::get('/temas/{tag}', 'FrontController@getContentsByTag');
+Route::get('/psr-en-los-medios', 'FrontController@getContentsofPrensa');
+Route::get('/psr-en-los-medios/{content}', 'FrontController@getContent2');
+Route::get('/psr-en-los-medios/{medio}', 'FrontController@getContentsByMedio');
+Route::get('/eventos/{content}', 'FrontController@getContent2');
+Route::get('/libros', 'FrontController@getContentsOfLibros');
+Route::get('/libros/{content}', 'FrontController@getContent2');
+Route::get('/{section}', 'FrontController@getSection');
+Route::get('/{section}/{subSection}', 'FrontController@getSubSection');
+Route::get('/{section}/{subSection}/{content}', 'FrontController@getContent');
+Route::post('storeContact', 'FrontController@storeContact');
+
+
+// /* OTHERS BACKEND CONTROLLERS */
+Route::get('backend/sections/{section}', 'SectionsController@getBySection');
+Route::get('backend/contents/section/{section}', 'ContentsController@getBySection');
+Route::get('backend/contents/subSection/{subSection}', 'ContentsController@getBySubSection');
